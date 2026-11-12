@@ -19,8 +19,8 @@ public class Visualizacion {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "fecha_visualizacion", nullable = false, unique = false) 
-    private LocalDate fecha_visualizacion;
+    @Column(name = "fechaVisualizacion", nullable = false, unique = false) 
+    private LocalDate fechaVisualizacion;
 
     @Column(name = "completado", nullable = false, unique = false)
     private Boolean completado;
@@ -28,9 +28,9 @@ public class Visualizacion {
     public Visualizacion() {
     }
 
-    public Visualizacion(UUID id, LocalDate fecha_visualizacion, Boolean completado) {
+    public Visualizacion(UUID id, LocalDate fechaVisualizacion, Boolean completado) {
         this.id = id;
-        this.fecha_visualizacion = fecha_visualizacion;
+        this.fechaVisualizacion = fechaVisualizacion;
         this.completado = completado;
     }
 
@@ -43,11 +43,11 @@ public class Visualizacion {
     }
 
     public LocalDate getFecha_visualizacion() {
-        return fecha_visualizacion;
+        return fechaVisualizacion;
     }
 
-    public void setFecha_visualizacion(LocalDate fecha_visualizacion) {
-        this.fecha_visualizacion = fecha_visualizacion;
+    public void setFecha_visualizacion(LocalDate fechaVisualizacion) {
+        this.fechaVisualizacion = fechaVisualizacion;
     }
 
     public Boolean getCompletado() {

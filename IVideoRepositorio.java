@@ -11,9 +11,18 @@ import java.util.UUID;
 @Repository
 public interface IVideoRepositorio extends JpaRepository<Video, UUID> {
 
-    // Buscar videos por categoría (SST, TALENTO, etc.)
+    // 1. buscar videos por categoria
     List<Video> findByCategoria(CategoriaVideo categoria);
 
-    // Buscar videos cuyo título contenga una palabra
-    List<Video> findByTituloContaining(String palabra);
+    // 2. buscar videos por titulo (que ignore mayuscula o minuscula)
+    List<Video> findByTituloIgnoreCase(String titulo);
+
+    // 3. buscar un video por descripcion (contenga pedazos)
+    List<Video> findByDescripcionContaining(String descripcion);
+
+    // 4. buscar videos por URL
+    List<Video> findByUrl(String url);
+
+    // 5. buscar videos por titulo y categoria
+    List<Video> findByTituloAndCategoria(String titulo, CategoriaVideo categoria);
 }
